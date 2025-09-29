@@ -1,10 +1,20 @@
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
+vim.cmd("set softtabstop=2")
+vim.cmd("set shiftwidth=2")
 
--- Show line numbers
 vim.cmd("set number")
+
+vim.opt.list = true
+vim.opt.listchars = {
+--  eol = '⤶',
+  space = '.',
+  trail = '✚',
+  extends = '◀',
+  precedes = '▶',
+}
+vim.opt.colorcolumn = "120"
+
 
 require("config.lazy")
 
@@ -13,7 +23,8 @@ local n_keymap = function(lhs, rhs)
 end
 
 n_keymap('<C-p>', ':FzfLua files<CR>')
-n_keymap('<C-g>', ':FzfLua grep<CR>')
+n_keymap('<C-f>', ':FzfLua grep<CR>')
+n_keymap('<C-g>', ':FzfLua git_diff<CR>')
 n_keymap('<C-BSlash>', ':FzfLua buffers<CR>')
 n_keymap('<BSlash><BSlash>', ':NvimTreeToggle<CR>')
 
