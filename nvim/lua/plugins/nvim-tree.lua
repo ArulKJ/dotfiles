@@ -3,11 +3,11 @@ local function on_attach(bufnr)
 
   local function opts(desc)
     return {
-      desc = "nvim-tree: " .. desc,
-      buffer = bufnr,
-      noremap = true,
-      silent = true,
-      nowait = true
+        desc = "nvim-tree: " .. desc,
+        buffer = bufnr,
+        noremap = true,
+        silent = true,
+        nowait = true
     }
   end
 
@@ -27,7 +27,15 @@ return {
   },
   config = function()
     require("nvim-tree").setup {
-        on_attach = on_attach
+        on_attach = on_attach,
+        diagnostics = {
+            enable = true
+        },
+        actions = {
+            open_file = {
+                resize_window = false
+            }
+        }
     }
   end,
 }

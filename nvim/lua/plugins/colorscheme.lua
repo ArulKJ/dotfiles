@@ -6,11 +6,11 @@
     config = function()
         local opts = {
             color_overrides = {
-                mocha = {
-                    base = "#000000",
-                    mantle = "#000000",
-                    crust = "#000000",
-                },
+--                mocha = {
+--                  base = "#000000",
+--                  mantle = "#000000",
+--                  crust = "#000000",
+--                },
             },
         }
         require("catppuccin").setup(opts)
@@ -42,7 +42,7 @@ return {
         local opts = {}
         require('kanagawa').setup(opts)
 --        vim.cmd.colorscheme "kanagawa-lotus"
-        vim.cmd.colorscheme "kanagawa-dragon"
---        vim.cmd.colorscheme "kanagawa-wave"
+--        vim.cmd.colorscheme "kanagawa-dragon"
+        vim.cmd.colorscheme "kanagawa-wave"
     end
 }]]
