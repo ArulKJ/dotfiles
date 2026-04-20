@@ -1,4 +1,5 @@
---[[return {
+return {
+  {
     "catppuccin/nvim",
     name = "catppuccin",
     lazy = false,
@@ -14,35 +15,51 @@
             },
         }
         require("catppuccin").setup(opts)
-        vim.cmd.colorscheme "catppuccin-mocha"
---        vim.cmd.colorscheme "catppuccin-latte"
---        vim.cmd.colorscheme "catppuccin-macchiato"
     end
-}]]
-
-return {
+  },
+  {
     "EdenEast/nightfox.nvim",
     lazy = false,
     priority = 1000,
     config = function()
         local opts = {}
         require("nightfox").setup(opts)
---        vim.cmd.colorscheme "dawnfox"
---        vim.cmd.colorscheme "dayfox"
-        vim.cmd.colorscheme "duskfox"
     end
-}
-
-
---[[return {
+  },
+  {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
     config = function()
         local opts = {}
         require('kanagawa').setup(opts)
---        vim.cmd.colorscheme "kanagawa-lotus"
---        vim.cmd.colorscheme "kanagawa-dragon"
-        vim.cmd.colorscheme "kanagawa-wave"
     end
-}]]
+  },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+        local opts = {}
+        require('tokyonight').setup(opts)
+    end
+  },
+  {
+    "vague-theme/vague.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+        local opts = {}
+        require('vague').setup(opts)
+    end
+  },
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+        local opts = {}
+        require('vague').setup(opts)
+    end
+  }
+}

@@ -1,7 +1,7 @@
 vim.cmd("set expandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
+vim.cmd("set tabstop=2")
+vim.cmd("set softtabstop=2")
+vim.cmd("set shiftwidth=2")
 
 vim.cmd("set number")
 
@@ -17,7 +17,18 @@ vim.opt.colorcolumn = "120"
 vim.opt.splitright = true
 
 
+-- Better folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.treesitter.foldexpr()"
+
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99 -- open all fold when opening bufr
+
+-- Init lazy
 require("config.lazy")
+
+-- Set theme only after initializing lazy
+vim.cmd.colorscheme "tokyonight-night"
 
 local n_keymap = function(lhs, rhs)
     vim.api.nvim_set_keymap('n', lhs, rhs, { noremap = true, silent = true })

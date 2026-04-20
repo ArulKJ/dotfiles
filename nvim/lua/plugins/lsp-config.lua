@@ -20,8 +20,16 @@ return {
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
             lspconfig('lua_ls', {
-                capabilities = capabilities
-            })
+                capabilities = capabilities,
+                settings = {
+                  Lua = {
+                    diagnostics = {
+                      globals = { "vim" }
+                    }
+                  }
+                }
+              }
+            )
             lspconfig('pylsp', {
                 capabilities = capabilities,
                 settings = {
@@ -42,6 +50,7 @@ return {
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
             vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
             vim.keymap.set('n', 'gr', vim.lsp.buf.references, {})
+            vim.keymap.set('n', 'ca', vim.lsp.buf.code_action, {})
         end
     }
 }

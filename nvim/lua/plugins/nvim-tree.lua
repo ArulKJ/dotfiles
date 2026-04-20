@@ -31,6 +31,9 @@ return {
         diagnostics = {
             enable = true
         },
+        view = {
+            adaptive_size = true
+        },
         actions = {
             open_file = {
                 resize_window = false
